@@ -30,7 +30,9 @@ const router = express.Router();
  *         description: Created
  */
 
-router.post("/", validate("createItem"), validationErrorHandler, createItem);
+router.post("/", createItem);
+// router.post("/", validate("createItem"), validationErrorHandler, createItem);
+
 
 router.get("/", getAllItems);
 

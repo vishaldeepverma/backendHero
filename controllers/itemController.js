@@ -36,7 +36,7 @@ exports.getItemById = async (req, res, next) => {
   try {
     const itemId = req.params.itemId;
     logger.info("Controller: get item by id");
-    const dbResponse = await fetchItemById(decryptField(itemId));
+    const dbResponse = await fetchItemById(itemId);
 
     // format date
     dbResponse.dateOfManufacture = moment(dbResponse.dateOfManufacture).format(
@@ -54,7 +54,7 @@ exports.updateItemById = async(req, res, next) => {
   try {
     logger.info("Controller: update item by id");
     console.log(req.body);
-    const itemId = decryptField(req.body.id);
+    const itemId = req.body.id;
     
     // remove id field
     delete req.body.id;

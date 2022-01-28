@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const { interceptor } = require("./utility");
+// const { interceptor } = require("./utility");
 
 const app = express();
 const helmet = require("helmet");
@@ -37,11 +37,6 @@ app.disable("x-powered-by");
 
 // parse json
 app.use(express.json());
-
-app.use(interceptor);
-// app.get('/', (req, res, next) => {
-//   return res.send("I am ready");
-// })
 
 // item routes
 app.use("/api/item", item);
