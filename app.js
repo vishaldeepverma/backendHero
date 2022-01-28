@@ -39,9 +39,9 @@ app.disable("x-powered-by");
 app.use(express.json());
 
 app.use(interceptor);
-app.get('/', (req, res, next) => {
-  return res.send("I am ready");
-})
+// app.get('/', (req, res, next) => {
+//   return res.send("I am ready");
+// })
 
 // item routes
 app.use("/api/item", item);
